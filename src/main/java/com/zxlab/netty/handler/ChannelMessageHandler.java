@@ -14,6 +14,6 @@ public class ChannelMessageHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("channel read");
         System.out.println(msg);
-      //  ctx.writeAndFlush(msg);
+        ctx.writeAndFlush(msg);
     }
 }

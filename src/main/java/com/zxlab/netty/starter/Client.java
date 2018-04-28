@@ -2,10 +2,8 @@ package com.zxlab.netty.starter;
 
 import com.zxlab.netty.encoder.TransformProtocolDecoder;
 import com.zxlab.netty.encoder.TransformProtocolEncoder;
-import com.zxlab.netty.handler.ChannelMessageHandler;
 import com.zxlab.netty.handler.ClientChannelMessageHandler;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -46,9 +44,11 @@ public class Client {
         }
     }
 
+
     public ClientChannelMessageHandler getClientHandler() {
         return clientHandler;
     }
+
 
     public Channel getClientChannel() {
         return clientChannel;

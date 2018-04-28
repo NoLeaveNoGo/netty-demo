@@ -10,6 +10,8 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
+import io.netty.channel.nio.NioEventLoopGroup;
+
 public class ClientStarter {
 
     public static void main(String[] args) {
@@ -31,6 +33,7 @@ public class ClientStarter {
         map.put(request.getId(), executer);
         client.getClientChannel().writeAndFlush(p);
         System.out.println(executer.getResponse().getResult());
+        client.getClientChannel().writeAndFlush(p);
         client.close();
     }
 }
